@@ -1,43 +1,38 @@
 import 'package:flutter/material.dart';
 
-import '../gen/assets.gen.dart';
 import 'base/base_page.dart';
-import 'explain_page.dart';
 
-class AnswerPage extends StatelessWidget {
-  const AnswerPage({super.key});
+class ExplainPage extends StatelessWidget {
+  const ExplainPage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      nextPage: const ExplainPage(),
       child: DefaultTextStyle(
         style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-              fontSize: 56,
+              fontSize: 40,
             ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Row(
-              children: [
-                Text('正解は...'),
-              ],
-            ),
-            Assets.images.icon.image(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
               children: [
                 Text(
-                  'A : 5行以下',
+                  'flutter_animate ',
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        fontSize: 56,
                         color: Colors.blueAccent,
+                        fontSize: 56,
                       ),
                 ),
-                const Text('B : 5行より多く、15行以下'),
-                const Text('C : 15行より多い'),
+                const Text('とは...'),
               ],
             ),
+            const Text('''
+・ アニメーションを直感的に実装可能にするパッケージ'''),
+            const Text('''
+・ Wonderous の作成チームが作成している'''),
+            const SizedBox(),
           ],
         ),
       ),
