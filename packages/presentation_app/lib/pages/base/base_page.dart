@@ -7,23 +7,25 @@ class BasePage extends StatelessWidget {
   const BasePage({
     this.isInitial,
     required this.child,
-    required this.nextPage,
+    this.nextPage,
     super.key,
   });
 
   final bool? isInitial;
   final Widget child;
-  final Widget nextPage;
+  final Widget? nextPage;
 
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
     return KeybordInput(
-      invokeByRight: () => Navigator.of(context).push(
-        MaterialPageRoute(
-          builder: (_) => nextPage,
-        ),
-      ),
+      invokeByRight: nextPage == null
+          ? () {}
+          : () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => nextPage!,
+                ),
+              ),
       invokeByleft:
           isInitial ?? false ? () {} : () => Navigator.of(context).pop(),
       child: Scaffold(
