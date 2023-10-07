@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import 'agenda_page.dart';
 import 'base/base_page.dart';
@@ -8,12 +9,12 @@ class TitlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const BasePage(
+    return BasePage(
       isInitial: true,
-      nextPage: AgendaPage(),
+      nextPage: const AgendaPage(),
       child: Stack(
         children: [
-          Align(
+          const Align(
             alignment: Alignment.bottomRight,
             child: Text(
               '''
@@ -24,7 +25,7 @@ Aoi''',
             ),
           ),
           Center(
-            child: Column(
+            child: const Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Row(
@@ -66,7 +67,11 @@ Aoi''',
                   ],
                 ),
               ],
-            ),
+            )
+                .animate(
+                  onPlay: (controller) => controller.repeat(),
+                )
+                .shimmer(duration: 2000.ms),
           ),
         ],
       ),
