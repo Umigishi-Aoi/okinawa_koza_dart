@@ -1,5 +1,12 @@
 include: all_lint_rules.yaml
 
+analyzer:
+  errors:
+    # Otherwise cause the import of all_lint_rules to warn because of some rules conflicts.
+    # We explicitly enabled even conflicting rules and are fixing the conflict
+    # in this file
+    included_file_warning : ignore
+
 linter:
   rules:
     # False positive for custom enum-like classes (such as Flutter's "Colors")
@@ -69,3 +76,9 @@ linter:
 
     # Disabled for now until we have NNBD as it otherwise conflicts with `missing_return`
     no_default_cases: false
+
+    # パッケージ開発でないため、コメント強制は不要
+    unnecessary_library_directive: false
+
+    # 冗長なため、コメント強制は不要
+    public_member_api_docs: false

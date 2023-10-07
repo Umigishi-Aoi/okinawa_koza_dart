@@ -1,6 +1,5 @@
-import 'package:flutter_test/flutter_test.dart';
-
 import 'package:flutter_animate_sample/flutter_animate_sample.dart';
+import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   test('adds one to input values', () {
