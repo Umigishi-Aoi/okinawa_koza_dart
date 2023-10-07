@@ -25,9 +25,7 @@ class IntroductionPage extends StatelessWidget {
                     ),
               ),
             ),
-            SizedBox(
-              width: double.infinity,
-              height: double.infinity,
+            SizedBox.expand(
               child: Row(
                 children: [
                   Expanded(
