@@ -9,6 +9,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  flutter_animate: ^4.2.0+1
   keybord_input:
     path: ../keybord_input  
 
