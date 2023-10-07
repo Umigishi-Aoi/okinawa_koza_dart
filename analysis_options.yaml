@@ -1,5 +1,12 @@
 include: all_lint_rules.yaml
 
+analyzer:
+  errors:
+    # Otherwise cause the import of all_lint_rules to warn because of some rules conflicts.
+    # We explicitly enabled even conflicting rules and are fixing the conflict
+    # in this file
+    included_file_warning : ignore
+
 linter:
   rules:
     # False positive for custom enum-like classes (such as Flutter's "Colors")
