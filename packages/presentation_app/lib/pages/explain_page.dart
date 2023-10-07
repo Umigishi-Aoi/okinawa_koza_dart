@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'base/base_page.dart';
+import 'catalog_page.dart';
 
 class ExplainPage extends StatelessWidget {
   const ExplainPage({super.key});
@@ -8,6 +9,7 @@ class ExplainPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
+      nextPage: const CatalogPage(),
       child: DefaultTextStyle(
         style: Theme.of(context).textTheme.headlineLarge!.copyWith(
               fontSize: 40,
