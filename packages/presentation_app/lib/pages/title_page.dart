@@ -8,13 +8,10 @@ class TitlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BasePage(
-      invokeByRight: () {
-        Navigator.of(context)
-            .push(MaterialPageRoute(builder: (_) => const AgendaPage()));
-      },
-      invokeByLeft: () {},
-      child: const Stack(
+    return const BasePage(
+      isInitial: true,
+      nextPage: AgendaPage(),
+      child: Stack(
         children: [
           Align(
             alignment: Alignment.bottomRight,

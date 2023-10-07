@@ -5,22 +5,27 @@ import 'background.dart';
 
 class BasePage extends StatelessWidget {
   const BasePage({
+    this.isInitial,
     required this.child,
-    required this.invokeByRight,
-    required this.invokeByLeft,
+    required this.nextPage,
     super.key,
   });
 
+  final bool? isInitial;
   final Widget child;
-  final void Function() invokeByRight;
-  final void Function() invokeByLeft;
+  final Widget nextPage;
 
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
     return KeybordInput(
-      invokeByRight: invokeByRight,
-      invokeByleft: invokeByLeft,
+      invokeByRight: () => Navigator.of(context).push(
+        MaterialPageRoute(
+          builder: (_) => nextPage,
+        ),
+      ),
+      invokeByleft:
+          isInitial ?? false ? () {} : () => Navigator.of(context).pop(),
       child: Scaffold(
         body: Stack(
           children: [

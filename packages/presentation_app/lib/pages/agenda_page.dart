@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'base/base_page.dart';
+import 'introduction_page.dart';
 
 class AgendaPage extends StatelessWidget {
   const AgendaPage({super.key});
@@ -8,10 +9,7 @@ class AgendaPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      invokeByRight: () {},
-      invokeByLeft: () {
-        Navigator.of(context).pop();
-      },
+      nextPage: const IntroductionPage(),
       child: DefaultTextStyle(
         style: Theme.of(context).textTheme.headlineLarge!.copyWith(
               fontSize: 56,
