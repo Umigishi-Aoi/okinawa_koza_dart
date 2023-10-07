@@ -12,6 +12,8 @@ class Presentation extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         fontFamily: FontFamily.mplus1,
+        textTheme:
+            const TextTheme(headlineLarge: TextStyle(color: Colors.black)),
         pageTransitionsTheme: const PageTransitionsTheme(
           builders: {
             TargetPlatform.macOS: ZoomPageTransitionsBuilder(

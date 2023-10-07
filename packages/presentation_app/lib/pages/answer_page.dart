@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../gen/assets.gen.dart';
 import 'base/base_page.dart';
@@ -23,21 +24,41 @@ class AnswerPage extends StatelessWidget {
                 Text('正解は...'),
               ],
             ),
-            Assets.images.icon.image(),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Assets.images.icon
+                    .image()
+                    .animate(onPlay: (controller) => controller.repeat())
+                    .shake(
+                      hz: 4,
+                      curve: Curves.easeInOutCubic,
+                      duration: 1800.ms,
+                    )
+                    .scale(end: const Offset(1.1, 1.1), duration: 600.ms)
+                    .then(delay: 600.ms)
+                    .scale(
+                      begin: const Offset(1.1, 1.1),
+                      end: const Offset(1 / 1.1, 1 / 1.1),
+                    ),
+                Assets.images.animateCode.image(scale: 1.5),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
-                  'A : 5行以下',
+                  'A : 10行',
                   style: Theme.of(context).textTheme.headlineLarge!.copyWith(
                         fontSize: 56,
                         color: Colors.blueAccent,
                       ),
                 ),
-                const Text('B : 5行より多く、15行以下'),
-                const Text('C : 15行より多い'),
+                const Text('B : 31行'),
+                const Text('C : 63行'),
               ],
             ),
+            const SizedBox(),
           ],
         ),
       ),

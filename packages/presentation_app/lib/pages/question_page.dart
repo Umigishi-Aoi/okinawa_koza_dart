@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../gen/assets.gen.dart';
 import 'answer_page.dart';
@@ -20,24 +21,39 @@ class QuestionPage extends StatelessWidget {
           children: [
             const Row(
               children: [
-                Text('質問'),
+                Text('問題'),
               ],
             ),
-            Assets.images.icon.image(),
+            Assets.images.icon
+                .image()
+                .animate(onPlay: (controller) => controller.repeat())
+                .shake(hz: 4, curve: Curves.easeInOutCubic, duration: 1800.ms)
+                .scale(end: const Offset(1.1, 1.1), duration: 600.ms)
+                .then(delay: 600.ms)
+                .scale(
+                  begin: const Offset(1.1, 1.1),
+                  end: const Offset(1 / 1.1, 1 / 1.1),
+                ),
             const Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text('このアニメーション何行だと思いますか？'),
+                Column(
+                  children: [
+                    Text('flutter_animate パッケージを使った'),
+                    Text('このアニメーション、何行だと思いますか？'),
+                  ],
+                ),
               ],
             ),
-            const Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
+            const Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text('A : 5行以下'),
-                Text('B : 5行より多く、15行以下'),
-                Text('C : 15行より多い'),
+                Text('A : 10行'),
+                Text('B : 31行'),
+                Text('C : 63行'),
               ],
             ),
+            const SizedBox(),
           ],
         ),
       ),
