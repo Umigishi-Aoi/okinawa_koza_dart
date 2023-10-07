@@ -22,7 +22,10 @@ dev_dependencies:
 flutter:
   uses-material-design: true
 
-        
+  fonts:
+    - family: MPLUS1
+      fonts:
+        - asset: fonts/MPLUS1-VariableFont_wght.ttf
     
     
                                       
