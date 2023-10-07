@@ -3,6 +3,7 @@ import 'package:flutter_animate/flutter_animate.dart';
 
 import '../gen/assets.gen.dart';
 import 'base/base_page.dart';
+import 'question_page.dart';
 
 class IntroductionPage extends StatelessWidget {
   const IntroductionPage({super.key});
@@ -10,6 +11,7 @@ class IntroductionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
+      nextPage: const QuestionPage(),
       child: DefaultTextStyle(
         style: Theme.of(context).textTheme.headlineLarge!.copyWith(
               fontSize: 32,
