@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 
 import '../gen/assets.gen.dart';
 import 'base/base_page.dart';
@@ -9,7 +10,6 @@ class IntroductionPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      nextPage: Container(),
       child: DefaultTextStyle(
         style: Theme.of(context).textTheme.headlineLarge!.copyWith(
               fontSize: 32,
@@ -32,7 +32,10 @@ class IntroductionPage extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Assets.images.icon.image(scale: 0.5),
+                        Assets.images.icon
+                            .image(scale: 0.5)
+                            .animate(delay: const Duration(seconds: 30))
+                            .rotate(),
                       ],
                     ),
                   ),
