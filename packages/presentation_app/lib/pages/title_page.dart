@@ -7,8 +7,10 @@ class TitlePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const BasePage(
-      child: Stack(
+    return BasePage(
+      invokeByRight: () {},
+      invokeByLeft: () {},
+      child: const Stack(
         children: [
           Align(
             alignment: Alignment.bottomRight,
