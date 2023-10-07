@@ -10,7 +10,17 @@ class Presentation extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(fontFamily: FontFamily.mplus1),
+      theme: ThemeData(
+        fontFamily: FontFamily.mplus1,
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: {
+            TargetPlatform.macOS: ZoomPageTransitionsBuilder(
+              allowSnapshotting: false,
+              allowEnterRouteSnapshotting: false,
+            ),
+          },
+        ),
+      ),
       home: const TitlePage(),
     );
   }

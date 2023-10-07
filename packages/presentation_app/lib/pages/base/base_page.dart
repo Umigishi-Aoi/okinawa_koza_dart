@@ -21,9 +21,13 @@ class BasePage extends StatelessWidget {
     return KeybordInput(
       invokeByRight: nextPage == null
           ? () {}
-          : () => Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (_) => nextPage!,
+          : () => Navigator.push(
+                context,
+                PageRouteBuilder(
+                  pageBuilder: (_, __, ___) => nextPage!,
+                  maintainState: false,
+                  allowSnapshotting: false,
+                  transitionDuration: Duration.zero,
                 ),
               ),
       invokeByleft:
