@@ -10,6 +10,8 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_animate: ^4.2.0+1
+  flutter_animate_sample:
+    path: ../flutter_animate_sample
   keybord_input:
     path: ../keybord_input  
 

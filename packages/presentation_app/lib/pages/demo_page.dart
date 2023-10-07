@@ -9,8 +9,27 @@ class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      child: Center(
-        child: Assets.images.icon.image(),
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: Text(
+              'デモ',
+              style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+                    color: Colors.black,
+                    fontSize: 56,
+                  ),
+            ),
+          ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Assets.images.icon.image(scale: 0.5),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
