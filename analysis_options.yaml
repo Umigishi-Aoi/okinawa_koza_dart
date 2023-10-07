@@ -76,3 +76,9 @@ linter:
 
     # Disabled for now until we have NNBD as it otherwise conflicts with `missing_return`
     no_default_cases: false
+
+    # パッケージ開発でないため、コメント強制は不要
+    unnecessary_library_directive: false
+
+    # 冗長なため、コメント強制は不要
+    public_member_api_docs: false
