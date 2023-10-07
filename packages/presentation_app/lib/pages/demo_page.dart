@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../gen/assets.gen.dart';
 import 'base/base_page.dart';
+import 'conclusion_page.dart';
 
 class DemoPage extends StatelessWidget {
   const DemoPage({super.key});
@@ -9,6 +10,7 @@ class DemoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
+      nextPage: const ConclusionPage(),
       child: Stack(
         children: [
           Align(
