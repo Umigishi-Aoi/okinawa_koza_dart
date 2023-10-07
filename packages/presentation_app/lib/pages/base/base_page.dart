@@ -22,7 +22,7 @@ class BasePage extends StatelessWidget {
           children: [
             const Background(),
             Padding(
-              padding: EdgeInsets.all(deviceHeight * 0.05),
+              padding: EdgeInsets.all(deviceHeight * 0.07),
               child: child,
             ),
           ],

@@ -8,50 +8,64 @@ class TitlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const BasePage(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
+      child: Stack(
+        children: [
+          Align(
+            alignment: Alignment.bottomRight,
+            child: Text(
+              '''
+2023/10/08
+沖縄 コザ.dart
+Aoi''',
+              style: TextStyle(fontSize: 24),
+            ),
+          ),
+          Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Row(
+                  children: [
+                    Text(
+                      '''flutter_animate''',
+                      style: TextStyle(
+                        color: Colors.blueAccent,
+                        fontWeight: FontWeight.w900,
+                        fontSize: 100,
+                      ),
+                    ),
+                    Text(
+                      '''で''',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 100,
+                      ),
+                    ),
+                  ],
+                ),
                 Text(
-                  '''flutter_animate''',
+                  '''で直感的にアニメーションを''',
                   style: TextStyle(
-                    color: Colors.blueAccent,
                     fontWeight: FontWeight.w900,
                     fontSize: 100,
                   ),
                 ),
-                Text(
-                  '''で''',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 100,
-                  ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      '''実装しよう''',
+                      style: TextStyle(
+                        fontWeight: FontWeight.w900,
+                        fontSize: 100,
+                      ),
+                    ),
+                  ],
                 ),
               ],
             ),
-            Text(
-              '''で直感的にアニメーションを''',
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 100,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  '''実装しよう''',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 100,
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
