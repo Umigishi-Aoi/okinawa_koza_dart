@@ -7,50 +7,26 @@ class AgendaPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const BasePage(
-      child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              children: [
-                Text(
-                  '''flutter_animate''',
-                  style: TextStyle(
-                    color: Colors.blueAccent,
-                    fontWeight: FontWeight.w900,
-                    fontSize: 100,
-                  ),
-                ),
-                Text(
-                  '''で''',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 100,
-                  ),
-                ),
-              ],
+    return BasePage(
+      invokeByRight: () {},
+      invokeByLeft: () {
+        Navigator.of(context).pop();
+      },
+      child: DefaultTextStyle(
+        style: Theme.of(context).textTheme.headlineLarge!.copyWith(
+              fontSize: 56,
             ),
-            Text(
-              '''で直感的にアニメーションを''',
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                fontSize: 100,
-              ),
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  '''実装しよう''',
-                  style: TextStyle(
-                    fontWeight: FontWeight.w900,
-                    fontSize: 100,
-                  ),
-                ),
-              ],
-            ),
-          ],
+        child: const Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text('1. 自己紹介'),
+              Text('2. flutter_animate とは'),
+              Text('3. flutter_animate で実装できるアニメーション'),
+              Text('4. まとめ'),
+            ],
+          ),
         ),
       ),
     );

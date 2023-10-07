@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'agenda_page.dart';
 import 'base/base_page.dart';
 
 class TitlePage extends StatelessWidget {
@@ -8,7 +9,10 @@ class TitlePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
-      invokeByRight: () {},
+      invokeByRight: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (_) => const AgendaPage()));
+      },
       invokeByLeft: () {},
       child: const Stack(
         children: [
