@@ -20,7 +20,7 @@ class TitlePage extends StatelessWidget {
 2023/10/08
 沖縄 コザ.dart
 Aoi''',
-              style: TextStyle(fontSize: 24),
+              style: TextStyle(fontSize: 40),
             ),
           ),
           Center(
@@ -33,14 +33,14 @@ Aoi''',
                       '''flutter_animate''',
                       style: TextStyle(
                         color: Colors.blueAccent,
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         fontSize: 100,
                       ),
                     ),
                     Text(
                       '''で''',
                       style: TextStyle(
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         fontSize: 100,
                       ),
                     ),
@@ -49,7 +49,7 @@ Aoi''',
                 Text(
                   '''で直感的にアニメーションを''',
                   style: TextStyle(
-                    fontWeight: FontWeight.w900,
+                    fontWeight: FontWeight.w700,
                     fontSize: 100,
                   ),
                 ),
@@ -59,7 +59,7 @@ Aoi''',
                     Text(
                       '''実装しよう''',
                       style: TextStyle(
-                        fontWeight: FontWeight.w900,
+                        fontWeight: FontWeight.w700,
                         fontSize: 100,
                       ),
                     ),
